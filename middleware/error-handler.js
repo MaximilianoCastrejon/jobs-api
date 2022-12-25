@@ -28,7 +28,6 @@ const errorHandlerMiddleware = (err, req, res, next) => {
     )} field. Please choose a different value`;
     customError.statusCode = StatusCodes.BAD_REQUEST;
   }
-  return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ err });
   return res.status(customError.statusCode).json({ msg: customError.msg });
 };
 
